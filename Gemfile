@@ -46,6 +46,10 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
+gem "normalize-rails"
+gem "refile", github: "refile/refile", require: ["refile/rails", "refile/simple_form"]
+gem "refile-mini_magick"
+
 
 group :staging, :production do
   gem "newrelic_rpm"

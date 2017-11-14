@@ -1,0 +1,6 @@
+= simple_form_for event do |f|
+  = f.input :name, label: false
+  = f.input :description, required: false, label: false
+  br
+  = f.input :event_image, as: :attachment, direct: true, presigned: true, label: false
+  = f.button :submit

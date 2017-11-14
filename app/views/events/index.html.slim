@@ -1,0 +1,10 @@
+- events.each do |event|
+  .events_content
+    = image_tag attachment_url(event, :event_image)
+    h4 
+      |Name:
+      '
+      = event.name 
+    h6
+      |Description:
+      = event.description 

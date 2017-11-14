@@ -1,4 +1,4 @@
-class EventController < ApplicationController
+class EventsController < ApplicationController
   before_action :authenticate_user!
   
   expose :event
@@ -11,13 +11,15 @@ class EventController < ApplicationController
   end
   
   def create
+    event.save
+    respond_with event
   end
 
   def show
   end
 
   private
-    def store_params
-      params.require(:event).permit(:text, :description, :event_image_id)
+    def event_params
+      params.require(:event).permit(:name, :description, :event_image)
     end
 end
