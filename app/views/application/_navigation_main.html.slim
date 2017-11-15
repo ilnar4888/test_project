@@ -3,3 +3,4 @@
     - if user_signed_in?
 	    li = link_to "All events", events_path
 	    li = link_to "New event", new_event_path
+	    li = render "events/search"

@@ -19,8 +19,8 @@ html class="no-js" lang="en"
   body
   .header  
     = render "navigation"
-  .content
     = render "messages"
+  .content
     = yield
     javascript:
       App.currentUserData = #{{current_user.to_json}};

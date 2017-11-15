@@ -1,0 +1,5 @@
+= form_tag events_path, method: :get do  
+  .search_1  
+    = text_field_tag :query, params[:query], placeholder: "Search"
+  .submit_1
+	  = submit_tag "Search", name: nil

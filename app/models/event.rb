@@ -16,4 +16,6 @@ class Event < ApplicationRecord
   		Tag.where(name: name.strip).first_or_create
   	end
   end
+
+  scope :search_by_attributes, -> (query) { where("name || ' ' || description ILIKE ?", "%#{query}%").order(created_at: :desc) }
 end
