@@ -5,3 +5,5 @@ class ApplicationDecorator < Draper::Decorator
     PaginatingDecorator
   end
 end
+
+  

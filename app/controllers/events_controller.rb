@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  
   expose :event
   expose :events, ->{ Event.all.order('created_at DESC') }
   
   def index
+    render "events/_events"
   end
   
   def new 

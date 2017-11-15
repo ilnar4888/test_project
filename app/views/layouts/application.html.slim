@@ -17,18 +17,11 @@ html class="no-js" lang="en"
     == analytics_init if GoogleAnalytics.valid_tracker?
 
   body
-    - if user_signed_in?
-      .header  
-        = render "navigation"
-      .navbar
-        = render "tags"
-      .content
-        = render "messages"
-        = yield
-    - else  
-      = render "navigation"
-      = render "messages"
-      = yield
+  .header  
+    = render "navigation"
+  .content
+    = render "messages"
+    = yield
     javascript:
       App.currentUserData = #{{current_user.to_json}};
 
