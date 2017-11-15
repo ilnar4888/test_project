@@ -1,0 +1,8 @@
+h3 
+  |Tag name:
+  '
+  = @tag.name
+- if @tag.events.empty?
+	h5 = No events
+- else  
+  = render partial: "events/events", locals: { events: @events }

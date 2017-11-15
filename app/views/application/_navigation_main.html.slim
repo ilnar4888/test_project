@@ -1,6 +1,5 @@
 .top-bar-left
   ul.menu
     - if user_signed_in?
-      = active_link_to "Home", root_path, active: :exclusive, wrap_tag: :li
-    li = link_to "All events", events_path
-    li = link_to "New event", new_event_path
+	    li = link_to "All events", events_path
+	    li = link_to "New event", new_event_path

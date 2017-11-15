@@ -2,9 +2,7 @@
 @import "components/all";
 
 body {
-  width: 70%;
   margin: auto;
-  word-wrap: break-word;
 }
 
 img {
@@ -18,8 +16,50 @@ img {
 }
 
 .events_content {
-  border-bottom: 0.3em solid #e5e5e5;
-  height:100%;
+  border-bottom: 0.1em solid #2199e8;;
   margin-top: 10px;
   padding: 7px;
 }
+
+.header {
+  position: fixed;
+  margin-left: 250px;
+  width: 81%;
+}
+
+.navbar {
+  width: 250px;
+  position: fixed;
+  left: 0;
+  height: 100%;
+  background: #f5f7f9;
+  border-right: 1px solid #d6dce0;
+  .tag1 {
+    font-size: 1.0em;
+  }
+  .tag2 {
+    font-size: 1.2em;
+  }
+  .tag3 {
+    font-size: 1.4em;
+  }
+  .tag4 {
+    font-size: 1.6em;
+  }
+  .tag5 {
+    font-size: 1.8em;
+  }
+}
+.content {
+  margin-left: 250px;
+  padding: 1em 3em;
+  border-bottom: 1px solid #d6dce0;
+  background: #f5f7f9;
+  color: #9eafba;
+  padding-top: 50px;
+}
+
+.user_nav {
+  margin-right: 20px;
+}
+

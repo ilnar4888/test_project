@@ -1,0 +1,31 @@
+en:
+  simple_form:
+    labels:
+      event:
+        name: "Name"
+        description: "Description"
+        all_tags: "Tags"
+    placeholders:
+      event:
+        name: "Name"
+        description: "Description"
+        all_tags: "Tags (separated by commas)"
+  flash:
+    events:
+      create:
+        notice: "Event was successfully created."
+        alert: "Event could not be created."
+      destroy:
+        notice: "Event was successfully destroyed."
+        alert: "Event could not be destroyed."      
+  activerecord:
+    errors:
+      models:
+        event:
+          attributes:
+            name:
+              blank: "Name can not be blank"
+            description:
+              blank: "Description can not be blank"
+            all_tags:
+              blank: "Tags can not be blank"      
