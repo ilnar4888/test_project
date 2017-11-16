@@ -25,9 +25,9 @@ class EventsController < ApplicationController
 
     def requests_events
       if params[:query].present?
-        Event.search_by_attributes(params[:query])
+        Event.includes(:tags).search_by_attributes(params[:query])
       else  
-        Event.all.order('created_at DESC')
+        Event.includes(:tags).all.order('created_at DESC')
       end
     end
 end

@@ -6,4 +6,8 @@ h2
 h4
   |Description:
   '
-  = event.description 
+  = event.description
+  - if current_user.events.include?(event)
+    h4 You are registered for the event
+  - else  
+    = button_to "Registration", event_recordings_path(event) 

@@ -4,16 +4,22 @@ h4
   - tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class|
     = link_to " #{tag.name}", tag_path(tag.name), class: css_class 
 - events.each do |event|
+  - Rails.logger.debug("My object: #{event.users.include?("#{current_user}")}")
   .events_content
     = image_tag attachment_url(event, :event_image)
     h4 
       |Name:
       '
-      = event.name 
+      = link_to "#{event.name}", event_path(event) 
     h6
       |Description:
       '
-      = event.description 
+      = event.description
+    .record
+      - if current_user.events.include?(event)
+        h4 You are registered for the event
+      - else  
+        = button_to "Registration", event_recordings_path(event)
     .tags
       |Tags:
       '

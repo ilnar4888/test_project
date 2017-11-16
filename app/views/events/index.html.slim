@@ -8,7 +8,9 @@
     h6
       |Description:
       '
-      = event.description 
+      = event.description
+    .record
+      = button_to "Registration",    
     .tags
       |Tags:
       = raw event.tags.map(&:name).map{ |t| link_to t, tag_path(t) }.join(' ')      
