@@ -49,6 +49,8 @@ gem "stackprof"
 gem "normalize-rails"
 gem "refile", github: "refile/refile", require: ["refile/rails", "refile/simple_form"]
 gem "refile-mini_magick"
+gem "react-rails"
+gem "jquery-rails"
 
 
 group :staging, :production do

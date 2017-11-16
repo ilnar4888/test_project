@@ -10,4 +10,15 @@ h4
   - if current_user.events.include?(event)
     h4 You are registered for the event
   - else  
-    = button_to "Registration", event_recordings_path(event) 
+    = button_to "Registration", event_recordings_path(event)
+  .recordings 
+    - if event.users.any?
+    	| All Registered users:
+    	'
+    - event.users.each do |user|
+      - unless user == current_user
+        = user.full_name
+  .tags
+      |Tags:
+      '
+      = raw event.tags.map(&:name).map{ |t| link_to t, tag_path(t) }.join(' ')         
