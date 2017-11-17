@@ -11,6 +11,6 @@ production:
     SMTP_DOMAIN: example.com
     SMTP_ADDRESS: smtp.sendgrid.net
     SMTP_PORT: 587
-    SMTP_USERNAME:
-    SMTP_PASSWORD:
+    SMTP_USERNAME: ilnar4888@gmail.com
+    SMTP_PASSWORD: 104Hmoa)
 

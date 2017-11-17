@@ -5,5 +5,5 @@ class User < ApplicationRecord
   validates :full_name, presence: true
 
   has_many :recordings
-  has_many :events, through: :recordings
+  has_many :events, through: :recordings, dependent: :destroy
 end
