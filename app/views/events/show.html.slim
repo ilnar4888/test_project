@@ -18,7 +18,7 @@ h4
     - event.users.each do |user|
       - unless user == current_user
         = user.full_name
-  .tags
-      |Tags:
-      '
-      = raw event.tags.map(&:name).map{ |t| link_to t, tag_path(t) }.join(' ')         
+  
+  |Tags:
+  '
+  = raw event.tags.map(&:name).map{ |t| link_to t, tag_path(t) }.join(' ')         

@@ -1,27 +1,28 @@
-- if Tag.count > 0
-  h4    
-  |Tags:
-  '
-  - tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class|
-    = link_to " #{tag.name}", tag_path(tag.name), class: css_class 
-- events.each do |event|
-  .events_content
-    - Rails.logger.debug("My object: #{event.event_image}")
-    = image_tag attachment_url(event, :event_image)
-    h4 
-      |Name:
-      '
-      = link_to "#{event.name}", event_path(event) 
-    h6
-      |Description:
-      '
-      = event.description
-    .record
-      - if current_user.events.include?(event)
-        h4 You are registered for the event
-      - else  
-        = button_to "Registration", event_recordings_path(event)
-    .tags
+.tags 
+  h4
+    |Tags:
+    '
+    - tag_cloud(Tag.counts, %w{tag1 tag2 tag3 tag4 tag5}) do |tag, css_class|
+      = link_to " #{tag.name}", tag_path(tag.name), class: css_class 
+- if events.present?
+  - events.each do |event|
+    .events_content
+      = image_tag attachment_url(event, :event_image)
+      h4 
+        |Name:
+        '
+        = link_to "#{event.name}", event_path(event) 
+      h6
+        |Description:
+        '
+        = event.description
+      .record
+        - if current_user.events.include?(event)
+          h4 You are registered for the event
+        - else  
+          = button_to "Registration", event_recordings_path(event)
       |Tags:
       '
       = raw event.tags.map(&:name).map{ |t| link_to t, tag_path(t) }.join(' ')
+- else
+  h1 = "No events"
