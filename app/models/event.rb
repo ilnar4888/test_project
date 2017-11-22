@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy
 
-  has_many :recordings
+  has_many :recordings, dependent: :destroy
   has_many :users, through: :recordings 
 
   validates  :name, presence: true, length: { maximum: 50 }
