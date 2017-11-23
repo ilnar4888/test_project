@@ -56,12 +56,12 @@ img {
 .user_nav {
   margin-right: 20px;
 }
-.search_1{
+.search_1 {
   position: relative;
   margin-top: -10px;
   margin: 6px;
 }
-.submit_1{
+.submit_1 {
   margin: 8px;
   position: relative;
   margin-left: 210px;
@@ -78,7 +78,18 @@ input[type=submit] {
   border-radius: 5px; 
 }
 
-.edit{
+.reply {
+  input[type=submit] {
+  padding:5px 15px; 
+  background: red; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  }
+}
+
+.edit {
   color: #9eafba;
   padding:3px 15px;
   margin-bottom: 5px; 

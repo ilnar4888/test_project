@@ -10,16 +10,19 @@ h4
   .edit 
     = link_to "Edit", edit_event_path(event), class: "edit"
   - if current_user.events.include?(event)
-    h4 You are registered for the event
+    h4 You are subscription for the event
+    .reply 
+      = button_to "Reply", event_recording_path(event), method: :delete
   - else  
-    = button_to "Registration", event_recordings_path(event)
+    = button_to "Subscription", event_recordings_path(event)
   .recordings 
-    - if event.users.any?
-    	| All Registered users:
-    	'
-    - event.users.each do |user|
-      - unless user == current_user
-        = user.full_name
+    - if !event.users.include?(current_user) && !(event.users.length > 1)
+      - if event.users.any?        
+        | All Registered users:
+        '
+      - event.users.each do |user|
+        - unless user == current_user
+          = user.full_name
   
   |Tags:
   '

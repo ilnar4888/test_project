@@ -8,4 +8,10 @@ class RecordingsController < ApplicationController
   	event.save
   	redirect_to request.referrer || root_path 
   end
+
+  def destroy
+  	recording = Recording.find_by("event_id = ? AND user_id = ?", params[:event_id], current_user.id)
+  	recording.destroy
+  	redirect_to request.referrer || root_path
+  end
 end
