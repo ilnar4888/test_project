@@ -10,7 +10,7 @@ class Event < ApplicationRecord
   validates  :name, presence: true, length: { maximum: 50 }
   validates  :description, presence: true, length: { maximum: 1000 }
   validates  :event_image, presence: true
-
+  
   def all_tags
     self.tags.map(&:name).join(', ')
   end

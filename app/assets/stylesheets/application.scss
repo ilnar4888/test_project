@@ -78,6 +78,17 @@ input[type=submit] {
   border-radius: 5px; 
 }
 
+.reply{
+  input[type=submit] {
+  padding:5px 15px; 
+  background: red; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  }
+}
+
 .edit{
   color: #9eafba;
   padding:3px 15px;
