@@ -18,6 +18,14 @@ class EventsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    event.update!(event_params)
+    respond_with event
+  end
+
   private
     def event_params
       params.require(:event).permit(:name, :description, :event_image, :all_tags)

@@ -7,6 +7,8 @@ h4
   |Description:
   '
   = event.description
+  .edit 
+    = link_to "Edit", edit_event_path(event), class: "edit"
   - if current_user.events.include?(event)
     h4 You are registered for the event
   - else  
